@@ -123,7 +123,7 @@ class DNSGenerator:
 
     def generate_response_code(self, records):
         if len(records) == 0:
-            self.RCODE = '0003'
+            self.RCODE = '0011'
         else:
             self.RCODE = '0000'
 
