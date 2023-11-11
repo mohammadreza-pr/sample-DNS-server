@@ -4,7 +4,7 @@ from threading import Thread
 from DNSGenerator import DNSGenerator
 
 server_ip = '127.0.0.1'
-port = 5354
+port = 5353
 
 
 class ClientHandler(Thread):

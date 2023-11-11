@@ -5,7 +5,7 @@ hosts = {}
 
 def load_records():
     global hosts
-    hosts_file = open('hosts', 'r')
+    hosts_file = open('/etc/hosts', 'r')
     for line in hosts_file:
         if line[0] != '#':
             IP, domain = line.split('\t')
