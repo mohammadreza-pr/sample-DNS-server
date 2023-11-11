@@ -1,6 +1,7 @@
 import socket
-from socket import socket
 from threading import Thread
+
+from DNSGenerator import DNSGenerator
 
 server_ip = '127.0.0.1'
 port = 5354
@@ -15,7 +16,10 @@ class ClientHandler(Thread):
         self.dns_server = dns_server
 
     def response_client(self):
-        self.dns_server.sendto(b'', self.client_address)
+        dns_generator = DNSGenerator(data=self.input_data)
+        response = dns_generator.run()
+        self.dns_server.sendto(response, self.client_address)
+        print(f'Record for {dns_generator.domain} sent to {self.client_address}')
 
 
 def main():
@@ -25,7 +29,6 @@ def main():
     while True:
         data, address = server.recvfrom(650)
         ClientHandler(client_address=address, input_data=data, dns_server=server).response_client()
-        print(data, address)
 
 
 if __name__ == '__main__':
