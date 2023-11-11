@@ -27,7 +27,7 @@ def main():
     server.bind((server_ip, port))
     print(f'DNS server is listening on {server_ip}:{port}...')
     while True:
-        data, address = server.recvfrom(650)
+        data, address = server.recvfrom(512)
         ClientHandler(client_address=address, input_data=data, dns_server=server).response_client()
 
 
