@@ -1,5 +1,5 @@
 # Sample-DNS-server
-### Done as a part of the Computer Networks course at Sharif University Fall 1402.
+### Done as a part of the Computer Networks course at Sharif University Fall 2023.
 A DNS server that is capable of responding to A type DNS queries on the server where it is deployed. By running this server, you have the ability to create and manage your own DNS mapping, allowing you to customize and control the resolution of domain names to IP addresses.
 # DNS Server Setup Guide
 
